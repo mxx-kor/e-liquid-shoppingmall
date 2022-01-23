@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>M-Liquid</title>
+    <link rel="shortcut icon" href="pngwing.com.png" />
+    <link
+      rel="stylesheet"
+      href="/node_modules/bootstrap/dist/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/node_modules/bootstrap-icons/font/bootstrap-icons.css"
+    />
+  </head>
+  <body>
+    <!-- navbar begin -->
+    <nav
+      class="navbar navbar-expand-md navbar-dark bg-dark"
+      aria-label="Fourth navbar example"
+    >
+      <div class="container-fluid">
+        <a class="navbar-brand fw-bold" href="/index.html"> M-Liquid </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarsExample04"
+          aria-controls="navbarsExample04"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarsExample04">
+          <ul class="navbar-nav me-auto mb-2 mb-md-0">
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="/index.html"
+                >Home</a
+              >
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="dropdown04"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+                >MTL</a
+              >
+              <ul class="dropdown-menu" aria-labelledby="dropdown04">
+                <li><a class="dropdown-item" href="#">Fruits</a></li>
+                <li><a class="dropdown-item" href="#">Desserts</a></li>
+                <li>
+                  <a class="dropdown-item" href="#">Cigarettes</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#">See all flavors</a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="dropdown04"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+                >DTL</a
+              >
+              <ul class="dropdown-menu" aria-labelledby="dropdown04">
+                <li><a class="dropdown-item" href="#">Fruits</a></li>
+                <li><a class="dropdown-item" href="#">Desserts</a></li>
+                <li>
+                  <a class="dropdown-item" href="#">Cigarettes</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#">See all flavors</a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/notice.html">Notice</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/contact.html">Contact</a>
+            </li>
+          </ul>
+          <div class="text-end">
+            <button
+              type="button"
+              class="btn btn-outline-light"
+              data-bs-toggle="modal"
+              data-bs-target="#logInModal"
+            >
+              Login
+            </button>
+            <a
+              href="/signUp.html"
+              class="btn btn-warning"
+              tabindex="-1"
+              role="button"
+              aria-disabled="true"
+              >Sign-up</a
+            >
+            <button type="button" class="btn btn-outline-light">
+              <i class="bi bi-cart-check"></i> Cart
+            </button>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <!-- navbar end -->
+    <!-- main begin -->
+    <main class="container">
+        <div class="d-flex align-items-center p-3 my-3 text-white bg-dark rounded shadow-sm">
+            <img src="/assets/pngwing.com.png" alt="logo" width="72" height="62" />
+            <div class="lh-1">
+            <h1 class="h4 mb-0 lh-1 fw-bold">자주 묻는 질문(FAQ)</h1>
+            </div>
+        </div>
+        <div class="card w-100">
+            <div class="card-body shadow-sm">
+              <h3 class="card-title border-bottom fw-bold pb-3">질문</h3>
+              <div class="accordion accordion-flush" id="accordionFlushExample">
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="flush-headingOne">
+                    <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                        1. 액상에도 유통기한이 있나요?
+                    </button>
+                  </h2>
+                  <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body">보통 1년정도로 유통기한이 있습니다.</div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="flush-headingTwo">
+                    <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                        2. 배송이 얼마나 걸리나요?
+                    </button>
+                  </h2>
+                  <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body">영업일 기준 2~3일 정도 소요됩니다.</div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="flush-headingThree">
+                    <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                        3. 다른 액상을 배송 받았어요
+                    </button>
+                  </h2>
+                  <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body">액상을 개봉하지 마시고 010-0000-0000으로 연락주세요.</div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="flush-headingFour">
+                      <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseFour">
+                        4. 액상이 맛이 없어요
+                      </button>
+                    </h2>
+                    <div id="flush-collapseFour" class="accordion-collapse collapse" aria-labelledby="flush-headingFour" data-bs-parent="#accordionFlushExample">
+                      <div class="accordion-body">저런 꽝에 걸리셨군요? 다음번엔 신중히 주문하세요</div>
+                    </div>
+                  </div>
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="flush-headingFive">
+                      <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFive" aria-expanded="false" aria-controls="flush-collapseFive">
+                        5. 합배송 가능해요?
+                      </button>
+                    </h2>
+                    <div id="flush-collapseFive" class="accordion-collapse collapse" aria-labelledby="flush-headingFive" data-bs-parent="#accordionFlushExample">
+                      <div class="accordion-body">저희 몰에서 주문하시는 모든 상품은 합배송 가능합니다.</div>
+                    </div>
+                  </div>
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="flush-headingSix">
+                      <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseSix" aria-expanded="false" aria-controls="flush-collapseSix">
+                          6. 누수가 생겼어요
+                      </button>
+                    </h2>
+                    <div id="flush-collapseSix" class="accordion-collapse collapse" aria-labelledby="flush-headingSix" data-bs-parent="#accordionFlushExample">
+                      <div class="accordion-body">시트러스 계열의 액상의 경우 누수가 발생할 수 있습니다.</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-4 text-muted mt-3 text-center">
+                        다른 사항이 궁금하신가요?
+                    </div>
+                    <div class="col-sm-8 text-center mt-3">
+                        M-Liquid - 010-0000-0000으로 연락주세요
+                    </div>
+                </div>
+          </div>
+          
+    </main>
+    <!-- main end -->
+    <!-- footer begin -->
+    <footer
+      class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top"
+    >
+      <div class="col-md-4 d-flex align-items-center">
+        <a
+          href="/"
+          class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1"
+        >
+          <svg class="bi" width="30" height="24">
+            <use xlink:href="#bootstrap"></use>
+          </svg>
+        </a>
+        <span class="text-muted">© 2021 M-Liquid 대표자 김민재</span>
+      </div>
+      <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+        <li class="mx-2">
+          <a class="text-muted h4" href="#"
+            ><i class="bi bi-twitter" width="24" height="24"></i
+          ></a>
+        </li>
+        <li class="mx-2">
+          <a class="text-muted h4" href="#"
+            ><i class="bi bi-instagram" width="24" height="24"></i
+          ></a>
+        </li>
+        <li class="mx-2">
+          <a class="text-muted me-5 h4" href="#"
+            ><i class="bi bi-facebook" width="100" height="24"></i
+          ></a>
+        </li>
+      </ul>
+    </footer>
+    <!-- footer end -->
+    <!-- Log In Modal begin -->
+    <div
+      class="modal fade"
+      id="logInModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Log In</h5>
+            <buttonn"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div
+              class="container d-flex align-items-center justify-content-center text-center"
+              style="width: 100%; max-width: 330px; padding: 15px; margin: auto"
+            >
+              <form class="w-100">
+                <img src="/pngwing.com.png" alt="logo" width="72" height="72" />
+                <div class="form-floating">
+                  <input
+                    type="email"
+                    class="form-control"
+                    id="floatingInput"
+                    placeholder="name@example.com"
+                  />
+                  <label for="floatingInput">Email address</label>
+                </div>
+                <div class="form-floating">
+                  <input
+                    type="password"
+                    class="form-control"
+                    id="floatingPassword"
+                    placeholder="Password"
+                  />
+                  <label for="floatingPassword">Password</label>
+                </div>
+
+                <div class="checkbox my-3">
+                  <label>
+                    <input type="checkbox" value="remember-me" /> Remember me
+                  </label>
+                </div>
+                <button class="w-100 btn btn-lg btn-primary" type="submit">
+                  Sign in
+                </button>
+                <p class="mt-5 mb-3 text-muted">© M-Liquid</p>
+                <div class="row">
+                  <p>회원 가입을 안하셨나요?</p>
+                  <a href="/signUp.html">Sign up</a>
+                </div>
+              </form>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Log In Modal end -->
+    <script src="/js/main.js"></script>
+    <script src="/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+  </body>
+</html>
