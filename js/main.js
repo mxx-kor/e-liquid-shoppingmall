@@ -1,4 +1,4 @@
-const signUpBtn = document.getElementById('sign-up')
+const faqbtn = document.getElementById('faq-btn')
 
 signUpBtn.addEventListener('click', goToSignUp)
 
