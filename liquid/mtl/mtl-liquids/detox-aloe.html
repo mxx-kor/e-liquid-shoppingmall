@@ -151,13 +151,21 @@
             alt=""
           />
         </div>
-        <div class="col-sm-4 mt-5">
+        <div class="col-sm-4 mt-3">
           <div class="d-felx text-center pt-5">
-            <h2 class="fw-bold">
+            <h3 class="fw-bold" id="liquid-title">
               입호흡 DETOX Aloe Vera 디톡스 알로에베라 30ml 9.8mg
-            </h2>
+            </h3>
             <p class="fw-bold text-danger text-center fs-4 mt-5">15,000원</p>
-            <p class="fw-bold">배송비 - 2,500원</p>
+            <small class="me-3 fw-bold">배송비</small>
+            <small class="fw-bold">
+              2,500원 (50,000원 이상 구매 시 무료)
+            </small>
+            <div class="mb-2">
+              <small class="text-muted fw-bold"
+                >제주 2,500원, 제주 외 도서 산간 3,000원 추가</small
+              >
+            </div>
             <div>
               <small class="fw-light text-muted">선택</small>
             </div>
@@ -168,18 +176,75 @@
               <option selected>선택하세요.</option>
               <option value="1">9.8mg</option>
               <option value="2">
-                <p>9.8mg + 쿨링에이전트5.5ml</p>
+                <p>쿨링에이전트5.5ml</p>
                 <p>(+ 3,900원)</p>
               </option>
             </select>
-            <div class="qty mt-5">
-              <small class="fw-light text-muted me-2">수량</small>
-              <span class="minus bg-dark">-</span>
-              <input type="number" class="count" name="qty" value="1" />
-              <span class="plus bg-dark">+</span>
+            <div class="qty mt-3 ms-5" id="quantity">
+              <small class="fw-light text-muted me-4">수량</small>
+              <span class="minus bg-dark" id="quantity-minus">-</span>
+              <input
+                type="number"
+                class="count"
+                name="qty"
+                value="1"
+                id="quantity-value"
+              />
+              <span class="plus bg-dark" id="quantity-plus">+</span>
+              <button class="btn btn-sm btn-outline-primary ms-5 fw-bold">
+                담기
+              </button>
+            </div>
+            <hr />
+            <div></div>
+            <div class="d-flex justify-content-between mx-5 mb-1">
+              <small class="fw-bold">주문수량</small>
+              <small>0개</small>
+            </div>
+            <div class="d-flex justify-content-between mx-5">
+              <small class="fw-bold">총 상품 금액</small>
+              <small>0원</small>
+            </div>
+            <div class="mt-4">
+              <button type="button" class="btn btn-outline-dark ms-2 px-4 me-4">
+                구매하기
+              </button>
+              <button type="button" class="btn btn-outline-dark ms-4">
+                장바구니에 담기
+              </button>
             </div>
           </div>
         </div>
+      </div>
+      <hr />
+      <div class="row justify-content-center">
+        <img
+          class="w-75"
+          src="https://contents.sixshop.com/thumbnails/uploadedFiles/138239/product/image_1626888245503_1000.jpg"
+          alt=""
+        />
+        <img
+          class="w-75"
+          src="https://contents.sixshop.com/thumbnails/uploadedFiles/138239/product/image_1604377911181_1000.jpg"
+          alt=""
+        />
+        <p class="fw-bold h4">
+          사슴사슴 X 빌스택스 콜라보 액상<br /><br />
+          디톡스 알로에베라 입호흡
+        </p>
+        <p class="text-success fw-bold h4 mt-4">
+          DETOX_ALOE VERA<br /><br />30ml, 9.8mg
+        </p>
+        <p class="my-5 h5">
+          알로에 쥬스를 액상으로 담아놓은 느낌!<br /><br />
+          입문자,사용자 모두 부담없이 즐길수 있는 맛!!<br /><br />
+          입안에서 퍼지는 알로에의 향연!
+        </p>
+        <img
+          class="w-75"
+          src="https://contents.sixshop.com/thumbnails/uploadedFiles/138239/product/image_1604992798712_1000.png"
+          alt=""
+        />
       </div>
     </main>
     <!-- main end -->
@@ -298,6 +363,5 @@
     <!-- Log In Modal end -->
     <script src="/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="/node_modules/bootstrap/dist/js/new-btn.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   </body>
 </html>
