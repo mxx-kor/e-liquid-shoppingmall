@@ -172,12 +172,13 @@
             <select
               class="form-select-sm mb-3"
               aria-label="Default select example"
+              id="selection"
             >
               <option selected>선택하세요.</option>
               <option value="1">9.8mg</option>
               <option value="2">
                 <p>쿨링에이전트5.5ml</p>
-                <p>(+ 3,900원)</p>
+                <p>(3,900원)</p>
               </option>
             </select>
             <div class="qty mt-3 ms-5" id="quantity">
@@ -191,19 +192,33 @@
                 id="quantity-value"
               />
               <span class="plus bg-dark" id="quantity-plus">+</span>
-              <button class="btn btn-sm btn-outline-primary ms-5 fw-bold">
+              <button
+                class="btn btn-sm btn-outline-primary ms-5 fw-bold"
+                id="cart-mini"
+              >
                 담기
               </button>
             </div>
             <hr />
-            <div></div>
+            <div
+              class="d-flex justify-content-between m-3"
+              id="cart-mini-element1"
+            >
+              <small>1</small><small>1</small>
+            </div>
+            <div
+              class="d-flex justify-content-between m-3"
+              id="cart-mini-element2"
+            >
+              <small>1</small><small>1</small>
+            </div>
             <div class="d-flex justify-content-between mx-5 mb-1">
               <small class="fw-bold">주문수량</small>
-              <small>0개</small>
+              <small id="resultQuantity">0개</small>
             </div>
             <div class="d-flex justify-content-between mx-5">
               <small class="fw-bold">총 상품 금액</small>
-              <small>0원</small>
+              <small id="resultCheck">0원</small>
             </div>
             <div class="mt-4">
               <button type="button" class="btn btn-outline-dark ms-2 px-4 me-4">
