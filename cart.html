@@ -133,6 +133,7 @@
               href="/cart.html"
               role="button"
               class="btn btn-outline-light active"
+              id="cart-btn"
             >
               <i class="bi bi-cart-check"></i> Cart
             </a>
@@ -151,8 +152,15 @@
           <h1 class="h4 mb-0 lh-1">장바구니</h1>
         </div>
       </div>
-      <div class="text-center text-muted" style="padding: 100px 0px">
+      <div class="text-center text-muted" style="padding: 100px 0px" id="empty">
         장바구니가 비어 있습니다.
+      </div>
+      <div class="row d-flex align-items-center mx-5">
+        <div class="col-3" id="cart-img"></div>
+        <div
+          class="col-9 d-flex justify-content-between"
+          id="cart-contents"
+        ></div>
       </div>
     </main>
     <!-- main end -->
@@ -270,5 +278,6 @@
     </div>
     <!-- Log In Modal end -->
     <script src="/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="/node_modules/bootstrap/dist/js/cart.js"></script>
   </body>
 </html>
