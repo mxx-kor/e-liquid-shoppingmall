@@ -13,14 +13,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://mxx-kor.github.io/e-liquid-shoppingmall/.git"
+    "url": "git+https://github.com/mxx-kor/e-liquid-shoppingmall.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "type": "module",
   "bugs": {
-    "url": "https://mxx-kor.github.io/e-liquid-shoppingmall/issues"
+    "url": "https://github.com/mxx-kor/e-liquid-shoppingmall/issues"
   },
-  "homepage": "https://mxx-kor.github.io/e-liquid-shoppingmall/#readme"
+  "homepage": "https://github.com/mxx-kor/e-liquid-shoppingmall#readme"
 }
