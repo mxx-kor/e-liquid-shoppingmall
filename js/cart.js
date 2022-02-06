@@ -5,7 +5,7 @@ const contents = document.getElementById('cart-contents');
 const cartNav = document.getElementById('cart-nav');
 
 if (sessionStorage.key(1) != null) {
-    for (i = 1; i < sessionStorage.length; i++) {
+    for (i = 1; i < sessionStorage.length + 1; i++) {
         let product1 = JSON.parse(sessionStorage.getItem(i));
         empty.remove();
         cartNav.style.visibility = 'visible';
