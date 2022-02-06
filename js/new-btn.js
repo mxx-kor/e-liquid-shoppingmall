@@ -10,12 +10,6 @@ const createdMiniCart2 = document.getElementById('cart-mini-element2');
 const cartBtn = document.getElementById('cart-btn');
 const buyBtn = document.getElementById('go-to-buy');
 
-const LIQUID_NAME = 'title';
-const LIQUID =  'liquid-quantity';
-const COOLING = 'coolings';
-const LIQUID_THUMBNAIL = 'img-thumbnail';
-const TOTAL = 'total';
-
 
 //수량 플러스, 마이너스 버튼
 minusBtn.addEventListener('click', () => {
@@ -95,43 +89,56 @@ function deleteItem2(){
 // 장바구니에 담기 버튼
 
 function addCart() {
-    if (document.getElementById('liquid-title').innerText != '입호흡 DETOX Aloe Vera 디톡스 알로에베라 30ml 9.8mg') {
-        alert('구현되지 않았습니다 😥')
+    if (document.getElementById('finalItem1') == null && document.getElementById('finalItem2') == null) {
+        alert('상품을 선택하고 담기버튼을 눌러주세요.');
+    } else if (document.getElementById('finalItem2') == null && document.getElementById('finalItem1') != null) {
+        alert('추가상품만 주문은 불가합니다.');
     } else {
-        if (document.getElementById('finalItem1') == null && document.getElementById('finalItem2') == null) {
-            alert('상품을 선택하고 담기버튼을 눌러주세요.');
-        } else if (document.getElementById('finalItem2') == null && document.getElementById('finalItem1') != null) {
-            alert('추가상품만 주문은 불가합니다.');
-        } else {
-            let newSpan = document.createElement('span');
-            let cartquantity = 1;
-            if (document.getElementById('addedItem') == null) {
-                let title = document.getElementById('liquid-title').innerText;
-                let imgsrc = document.getElementById('liquid-thumbnail').src;
-                let liquid_quantity = document.getElementById("finalItem2").innerText;
-                let total = resultCheck.innerText;
-                if (document.getElementById('finalItem1') == null) {
-                    let coolings = '-'
-                    const Product1 = new Product(title, imgsrc, liquid_quantity, coolings, total);
-                    alert('장바구니에 담았습니다.');
-                    newSpan.setAttribute('id', 'addedItem')
-                    newSpan.innerHTML = `(${cartquantity})`;
-                    cartBtn.appendChild(newSpan);
-                    AddToSession(Product1)
-                } else {
-                    let coolings = document.getElementById("finalItem1").innerText;
-                    const Product1 = new Product(title, imgsrc, liquid_quantity, coolings, total);
-                    alert('장바구니에 담았습니다.');
-                    newSpan.setAttribute('id', 'addedItem')
-                    newSpan.innerHTML = `(${cartquantity})`;
-                    cartBtn.appendChild(newSpan);
-                    AddToSession(Product1)
-                }
+        let newSpan = document.createElement('span');
+        let cartquantity = 1;
+        let cartNum = 1;
+        if (sessionStorage.getItem(1) == null) {
+            let title = document.getElementById('liquid-title').innerText;
+            let imgsrc = document.getElementById('liquid-thumbnail').src;
+            let total = document.getElementById('resultCheck').innerText;
+            let liquid_quantity = document.getElementById("finalItem2").innerText.slice(0, -1);
+            if (document.getElementById('finalItem1') == null) {
+                let coolings = '-'
+                const Liquid = new Product(title, imgsrc, liquid_quantity, coolings, total);
+                alert('장바구니에 담았습니다.');
+                newSpan.setAttribute('id', 'addedItem')
+                newSpan.innerHTML = `(${cartquantity})`;
+                cartBtn.appendChild(newSpan);
+                sessionStorage.setItem(cartNum, JSON.stringify(Liquid));
             } else {
-                alert('이미 추가된 상품입니다.');
-            }        
+                let coolings = document.getElementById("finalItem1").innerText;
+                const Liquid = new Product(title, imgsrc, liquid_quantity, coolings, total);
+                alert('장바구니에 담았습니다.');
+                newSpan.setAttribute('id', 'addedItem')
+                newSpan.innerHTML = `(${cartquantity})`;
+                cartBtn.appendChild(newSpan);
+                sessionStorage.setItem(cartNum, JSON.stringify(Liquid));
+            }
+        } else {
+            let cartNum = sessionStorage.length
+            cartNum += 1
+            let title = document.getElementById('liquid-title').innerText;
+            let imgsrc = document.getElementById('liquid-thumbnail').src;
+            let total = document.getElementById('resultCheck').innerText;
+            let liquid_quantity = document.getElementById("finalItem2").innerText.slice(0, -1);
+            if (document.getElementById('finalItem1') == null) {
+                let coolings = '-'
+                const Liquid = new Product(title, imgsrc, liquid_quantity, coolings, total);
+                alert('장바구니에 담았습니다.');
+                sessionStorage.setItem(cartNum, JSON.stringify(Liquid));
+            } else {
+                let coolings = document.getElementById("finalItem1").innerText;
+                const Liquid = new Product(title, imgsrc, liquid_quantity, coolings, total);
+                alert('장바구니에 담았습니다.');
+                sessionStorage.setItem(cartNum, JSON.stringify(Liquid));
+            }
         }
-    }
+    }     
 }
 
 //구매하기 버튼
@@ -141,24 +148,17 @@ buyBtn.addEventListener('click', () => {
     } else if (document.getElementById('finalItem2') == null && document.getElementById('finalItem1') != null) {
         alert('추가상품만 주문은 불가합니다.');
     } else {
-        location.href = '/buy.html'
+        location.href = '../../../buy.html'
     }
 })
 
 // product 객체 생성용
-function Product(title, imgsrc, liquid_quantity, coolings, total) {
+function Product (title, imgsrc, liquid_quantity, coolings, total) {
     this.title = title;
     this.imgsrc = imgsrc;
+    this.total = total;
     this.liquid_quantity = liquid_quantity;
     this.coolings = coolings;
-    this.total = total;
-  }
-// 세션스토리지에 저장 (cooling이 null일때 문제점있음)
-function AddToSession(product) {
-    sessionStorage.setItem(LIQUID_NAME, product.title);
-    sessionStorage.setItem(LIQUID_THUMBNAIL, product.imgsrc);
-    sessionStorage.setItem(LIQUID, product.liquid_quantity);
-    sessionStorage.setItem(COOLING, product.coolings);
-    sessionStorage.setItem(TOTAL, product.total);
-}
+ }
+
   
