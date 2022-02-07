@@ -1,9 +1,7 @@
 const cartBtn = document.getElementById('cart-btn');
 const empty = document.getElementById('empty');
-const img = document.getElementById('cart-img');
-const contents = document.getElementById('cart-contents');
 const cartNav = document.getElementById('cart-nav');
-let product1 = JSON.parse(sessionStorage.getItem(1));
+const cartContainer = document.getElementById('cart-container');
 
 if (sessionStorage.length != 0) {
     empty.remove();
@@ -15,33 +13,39 @@ if (sessionStorage.length != 0) {
     cartBtn.appendChild(newSpan);
     for (i = 1; i <= sessionStorage.length; i++) {
         let product1 = JSON.parse(sessionStorage.getItem(i));
+        let newImgDiv = document.createElement('div');
+        newImgDiv.setAttribute('class', "col-2");
+        let newContentsDiv = document.createElement('div');
+        newContentsDiv.setAttribute('class', "col-10 d-flex justify-content-between");
+        cartContainer.appendChild(newImgDiv);
+        cartContainer.appendChild(newContentsDiv);
         let newImg = document.createElement('img');
         let newAnchor = document.createElement('a');
         let newSmall1 = document.createElement('small');
         let newSmall2 = document.createElement('small');
         let newSmall3 = document.createElement('small');
         newImg.setAttribute('src', product1.imgsrc);
-        newImg.setAttribute('class', "img-thumbnail")
-        img.appendChild(newImg);
+        newImg.setAttribute('class', "img-thumbnail");
+        newImgDiv.appendChild(newImg);
         newAnchor.innerHTML = product1.title;
         newAnchor.setAttribute('href', "/liquid/mtl/mtl-liquids/detox-aloe.html");
         newAnchor.setAttribute('class', "text-decoration-none text-black");
-        contents.appendChild(newAnchor);
+        newContentsDiv.appendChild(newAnchor);
         newSmall1.innerHTML = product1.liquid_quantity;
-        contents.appendChild(newSmall1);
+        newContentsDiv.appendChild(newSmall1);
         newSmall2.innerHTML = product1.coolings;
-        contents.appendChild(newSmall2);
+        newContentsDiv.appendChild(newSmall2);
         newSmall3.innerHTML = product1.total;
-        contents.appendChild(newSmall3);
-        addXBtn()
+        newContentsDiv.appendChild(newSmall3);
+        addXBtn(newContentsDiv)
     }
 }
 
-function addXBtn() {
+function addXBtn(x) {
     newBtn = document.createElement('button')
     newBtn.setAttribute('class', 'btn');
     newBtn.innerHTML = '<i class="bi bi-x-lg" onclick="DeleteCart()"></i>';
-    contents.appendChild(newBtn);
+    x.appendChild(newBtn);
 }
 
 function DeleteCart() {
