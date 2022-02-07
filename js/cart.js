@@ -13,7 +13,7 @@ if (sessionStorage.key(1) != null) {
     newSpan.setAttribute('id', 'addedItem')
     newSpan.innerHTML = `(${cartquantity})`;
     cartBtn.appendChild(newSpan);
-    for (i = 0; i <= sessionStorage.length; i++) {
+    for (i = 1; i <= sessionStorage.length; i++) {
         let product1 = JSON.parse(sessionStorage.getItem(i));
         let newImg = document.createElement('img');
         let newAnchor = document.createElement('a');
