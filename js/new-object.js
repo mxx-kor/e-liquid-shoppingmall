@@ -22,7 +22,7 @@ function addCart() {
             sessionStorage.setItem(object, liquid1)
         }
      } else {
-        let cartNum = sessionStorage.length
+        let cartNum = Object.keys(sessionStorage);
         cartNum += 1
         let title = document.getElementById('liquid-title').innerText;
         let imgsrc = document.getElementById('liquid-thumbnail').src;
@@ -41,9 +41,5 @@ function addCart() {
 }
 
 let product1 = JSON.parse(sessionStorage.getItem(1));
-
-for (i = 1; i < sessionStorage.length; i++) {
-    console.log(product1.title)
-}
 
 

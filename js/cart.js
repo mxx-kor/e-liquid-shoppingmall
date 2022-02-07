@@ -5,11 +5,11 @@ const contents = document.getElementById('cart-contents');
 const cartNav = document.getElementById('cart-nav');
 let product1 = JSON.parse(sessionStorage.getItem(1));
 
-if (sessionStorage.key(1) != null) {
+if (sessionStorage.length != 0) {
     empty.remove();
     cartNav.style.visibility = 'visible';
     let newSpan = document.createElement('span');
-    let cartquantity = 1;
+    let cartquantity = sessionStorage.length;
     newSpan.setAttribute('id', 'addedItem')
     newSpan.innerHTML = `(${cartquantity})`;
     cartBtn.appendChild(newSpan);
