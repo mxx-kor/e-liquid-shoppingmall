@@ -3,17 +3,18 @@ const empty = document.getElementById('empty');
 const img = document.getElementById('cart-img');
 const contents = document.getElementById('cart-contents');
 const cartNav = document.getElementById('cart-nav');
+let product1 = JSON.parse(sessionStorage.getItem(1));
 
 if (sessionStorage.key(1) != null) {
-    for (i = 1; i < sessionStorage.length + 1; i++) {
+    empty.remove();
+    cartNav.style.visibility = 'visible';
+    let newSpan = document.createElement('span');
+    let cartquantity = 1;
+    newSpan.setAttribute('id', 'addedItem')
+    newSpan.innerHTML = `(${cartquantity})`;
+    cartBtn.appendChild(newSpan);
+    for (i = 0; i <= sessionStorage.length; i++) {
         let product1 = JSON.parse(sessionStorage.getItem(i));
-        empty.remove();
-        cartNav.style.visibility = 'visible';
-        let newSpan = document.createElement('span');
-        let cartquantity = 1;
-        newSpan.setAttribute('id', 'addedItem')
-        newSpan.innerHTML = `(${cartquantity})`;
-        cartBtn.appendChild(newSpan);
         let newImg = document.createElement('img');
         let newAnchor = document.createElement('a');
         let newSmall1 = document.createElement('small');
@@ -44,7 +45,7 @@ function addXBtn() {
 }
 
 function DeleteCart() {
-    sessionStorage.removeItem(1);
+    sessionStorage.removeItem();
     cartNav.style.visibility = 'hidden';
     location.reload();
 } 
