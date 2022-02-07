@@ -3,6 +3,7 @@ const empty = document.getElementById('empty');
 const cartNav = document.getElementById('cart-nav');
 const cartContainer = document.getElementById('cart-container');
 
+
 if (sessionStorage.length != 0) {
     empty.remove();
     cartNav.style.visibility = 'visible';
@@ -28,8 +29,8 @@ if (sessionStorage.length != 0) {
         newImg.setAttribute('class', "img-thumbnail");
         newImgDiv.appendChild(newImg);
         newAnchor.innerHTML = product1.title;
-        newAnchor.setAttribute('href', "/liquid/mtl/mtl-liquids/detox-aloe.html");
-        newAnchor.setAttribute('class', "text-decoration-none text-black");
+        newAnchor.setAttribute('href', product1.backToLiquid);
+        newAnchor.setAttribute('class', "text-decoration-none col-5 text-black");
         newContentsDiv.appendChild(newAnchor);
         newSmall1.innerHTML = product1.liquid_quantity;
         newContentsDiv.appendChild(newSmall1);
@@ -49,6 +50,12 @@ function addXBtn(x) {
 }
 
 function DeleteCart() {
+    let cartQuantity = document.getElementById('addedItem')
+    if (sessionStorage.length == 1) {
+        cartQuantity.remove()
+    } else {
+        cartQuantity.innerText = sessionStorage.length
+    }
     sessionStorage.removeItem();
     cartNav.style.visibility = 'hidden';
     location.reload();

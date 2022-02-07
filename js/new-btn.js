@@ -102,9 +102,10 @@ function addCart() {
             let imgsrc = document.getElementById('liquid-thumbnail').src;
             let total = document.getElementById('resultCheck').innerText;
             let liquid_quantity = document.getElementById("finalItem2").innerText.slice(0, -1);
+            let backToLiquid = document.location.href
             if (document.getElementById('finalItem1') == null) {
                 let coolings = '-'
-                const Liquid = new Product(title, imgsrc, liquid_quantity, coolings, total);
+                const Liquid = new Product(title, imgsrc, liquid_quantity, coolings, total, backToLiquid);
                 alert('장바구니에 담았습니다.');
                 newSpan.setAttribute('id', 'addedItem')
                 newSpan.innerHTML = `(${cartquantity})`;
@@ -112,7 +113,7 @@ function addCart() {
                 sessionStorage.setItem(cartNum, JSON.stringify(Liquid));
             } else {
                 let coolings = document.getElementById("finalItem1").innerText;
-                const Liquid = new Product(title, imgsrc, liquid_quantity, coolings, total);
+                const Liquid = new Product(title, imgsrc, liquid_quantity, coolings, total, backToLiquid);
                 alert('장바구니에 담았습니다.');
                 newSpan.setAttribute('id', 'addedItem')
                 newSpan.innerHTML = `(${cartquantity})`;
@@ -128,12 +129,12 @@ function addCart() {
             let liquid_quantity = document.getElementById("finalItem2").innerText.slice(0, -1);
             if (document.getElementById('finalItem1') == null) {
                 let coolings = '-'
-                const Liquid = new Product(title, imgsrc, liquid_quantity, coolings, total);
+                const Liquid = new Product(title, imgsrc, liquid_quantity, coolings, total, backToLiquid);
                 alert('장바구니에 담았습니다.');
                 sessionStorage.setItem(cartNum, JSON.stringify(Liquid));
             } else {
                 let coolings = document.getElementById("finalItem1").innerText;
-                const Liquid = new Product(title, imgsrc, liquid_quantity, coolings, total);
+                const Liquid = new Product(title, imgsrc, liquid_quantity, coolings, total, backToLiquid);
                 alert('장바구니에 담았습니다.');
                 sessionStorage.setItem(cartNum, JSON.stringify(Liquid));
             }
@@ -153,12 +154,13 @@ buyBtn.addEventListener('click', () => {
 })
 
 // product 객체 생성용
-function Product (title, imgsrc, liquid_quantity, coolings, total) {
+function Product (title, imgsrc, liquid_quantity, coolings, total, backToLiquid) {
     this.title = title;
     this.imgsrc = imgsrc;
     this.total = total;
     this.liquid_quantity = liquid_quantity;
     this.coolings = coolings;
+    this.backToLiquid = backToLiquid;
  }
 
   
