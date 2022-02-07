@@ -96,8 +96,8 @@ function addCart() {
     } else {
         let newSpan = document.createElement('span');
         let cartquantity = 1;
-        let cartNum = 0;
-        if (sessionStorage.getItem(0) == null) {
+        let cartNum = 1;
+        if (sessionStorage.getItem(1) == null) {
             let title = document.getElementById('liquid-title').innerText;
             let imgsrc = document.getElementById('liquid-thumbnail').src;
             let total = document.getElementById('resultCheck').innerText;
