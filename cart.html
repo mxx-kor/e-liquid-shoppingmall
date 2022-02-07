@@ -150,7 +150,7 @@
     </nav>
     <!-- navbar end -->
     <!-- main begin -->
-    <main class="container">
+    <main class="container" id="main">
       <div
         class="d-flex align-items-center p-3 my-3 text-white bg-dark rounded shadow-sm"
       >
@@ -167,25 +167,19 @@
         style="visibility: hidden"
         id="cart-nav"
       >
-        <div class="col-8" id="cart-nav-title"><small>상품 정보</small></div>
+        <div class="col-6" id="cart-nav-title"><small>상품 정보</small></div>
         <div
-          class="col-4 d-flex justify-content-between"
+          class="col-6 d-flex justify-content-between"
           id="cart-nav-contents"
         >
-          <small class="me-3">수량</small>
-          <small class="me-3">추가 상품</small>
-          <small class="me-3">총 금액</small>
-          <small class="me-3">삭제</small>
+          <small class="ms-4">수량</small>
+          <small>추가 상품</small>
+          <small class="me-4">총 금액</small>
+          <small class="me-2">삭제</small>
         </div>
         <hr />
       </div>
-      <div class="row d-flex align-items-center mx-5">
-        <div class="col-3" id="cart-img"></div>
-        <div
-          class="col-9 d-flex justify-content-between"
-          id="cart-contents"
-        ></div>
-      </div>
+      <div class="row d-flex align-items-center mx-5" id="cart-container"></div>
     </main>
     <!-- main end -->
     <!-- footer begin -->
