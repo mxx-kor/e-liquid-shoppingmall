@@ -3,11 +3,11 @@ const empty = document.getElementById('empty');
 const cartNav = document.getElementById('cart-nav');
 const cartContainer = document.getElementById('cart-container');
 
-if (Object.keys(sessionStorage) == null) {
+if (Object.keys(sessionStorage).length == 0) {
     cartNav.style.visibility = 'hidden';
 }
 
-if (Object.keys(sessionStorage) != null) {
+if (Object.keys(sessionStorage).length > 0) {
     empty.remove();
     cartNav.style.visibility = 'visible';
     let newSpan = document.createElement('span');
@@ -59,7 +59,7 @@ function paintCart() {
 
 function DeleteCart(e) {
     let cartQuantity = document.getElementById('addedItem')
-    if (Object.keys(sessionStorage) == null) {
+    if (Object.keys(sessionStorage).length == 0) {
         sessionStorage.removeItem(e);
     } else {
         sessionStorage.removeItem(e);
