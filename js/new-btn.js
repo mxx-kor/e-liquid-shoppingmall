@@ -127,6 +127,7 @@ function addCart() {
             let imgsrc = document.getElementById('liquid-thumbnail').src;
             let total = document.getElementById('resultCheck').innerText;
             let liquid_quantity = document.getElementById("finalItem2").innerText.slice(0, -1);
+            let backToLiquid = document.location.href
             if (document.getElementById('finalItem1') == null) {
                 let coolings = '-'
                 const Liquid = new Product(title, imgsrc, liquid_quantity, coolings, total, backToLiquid);

@@ -16,6 +16,7 @@ if (sessionStorage.length != 0) {
         let product1 = JSON.parse(sessionStorage.getItem(i));
         let newImgDiv = document.createElement('div');
         newImgDiv.setAttribute('class', "col-2");
+        newImgDiv.setAttribute('id', `${i}`)
         let newContentsDiv = document.createElement('div');
         newContentsDiv.setAttribute('class', "col-10 d-flex justify-content-between");
         cartContainer.appendChild(newImgDiv);
@@ -38,25 +39,26 @@ if (sessionStorage.length != 0) {
         newContentsDiv.appendChild(newSmall2);
         newSmall3.innerHTML = product1.total;
         newContentsDiv.appendChild(newSmall3);
-        addXBtn(newContentsDiv)
+        addXBtn(newContentsDiv, i)
     }
 }
 
-function addXBtn(x) {
+function addXBtn(x, i) {
     newBtn = document.createElement('button')
     newBtn.setAttribute('class', 'btn');
-    newBtn.innerHTML = '<i class="bi bi-x-lg" onclick="DeleteCart()"></i>';
+    newBtn.innerHTML = `<i class="bi bi-x-lg" id="${i}" onclick="DeleteCart(this.id)"></i>`;
     x.appendChild(newBtn);
 }
 
-function DeleteCart() {
+function DeleteCart(e) {
     let cartQuantity = document.getElementById('addedItem')
-    if (sessionStorage.length == 1) {
+    if (sessionStorage.length <= 1) {
         cartQuantity.remove()
+        cartNav.style.visibility = 'hidden';
+        sessionStorage.removeItem(e);
+        location.reload()
     } else {
-        cartQuantity.innerText = sessionStorage.length
+        sessionStorage.removeItem(e);
+        cartQuantity.innerText = `(${sessionStorage.length})`
     }
-    sessionStorage.removeItem();
-    cartNav.style.visibility = 'hidden';
-    location.reload();
 } 
