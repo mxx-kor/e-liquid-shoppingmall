@@ -12,6 +12,10 @@ if (Object.keys(sessionStorage) != null) {
     newSpan.innerHTML = `(${cartquantity})`;
     cartBtn.appendChild(newSpan);
     paintCart()
+} else {
+    let cartQuantity = document.getElementById('addedItem')
+    cartQuantity.remove()
+    cartNav.style.visibility = 'hidden';
 }
 
 function addXBtn(x, i) {
@@ -54,15 +58,11 @@ function paintCart() {
 }
 
 function DeleteCart(e) {
-    let cartQuantity = document.getElementById('addedItem')
     if (Object.keys(sessionStorage) == null) {
-        cartQuantity.remove()
-        cartNav.style.visibility = 'hidden';
         sessionStorage.removeItem(e);
     } else {
         sessionStorage.removeItem(e);
         cartQuantity.innerText = `(${sessionStorage.length})`
-        paintCart()
     }
     window.location.reload()
 } 
