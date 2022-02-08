@@ -3,6 +3,10 @@ const empty = document.getElementById('empty');
 const cartNav = document.getElementById('cart-nav');
 const cartContainer = document.getElementById('cart-container');
 
+if (Object.keys(sessionStorage) == null) {
+    cartNav.style.visibility = 'hidden';
+}
+
 if (Object.keys(sessionStorage) != null) {
     empty.remove();
     cartNav.style.visibility = 'visible';
@@ -12,10 +16,6 @@ if (Object.keys(sessionStorage) != null) {
     newSpan.innerHTML = `(${cartquantity})`;
     cartBtn.appendChild(newSpan);
     paintCart()
-} else {
-    let cartQuantity = document.getElementById('addedItem')
-    cartQuantity.remove()
-    cartNav.style.visibility = 'hidden';
 }
 
 function addXBtn(x, i) {
@@ -58,6 +58,7 @@ function paintCart() {
 }
 
 function DeleteCart(e) {
+    let cartQuantity = document.getElementById('addedItem')
     if (Object.keys(sessionStorage) == null) {
         sessionStorage.removeItem(e);
     } else {
