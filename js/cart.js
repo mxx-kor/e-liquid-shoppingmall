@@ -32,7 +32,7 @@ function paintCart() {
         let newImgDiv = document.createElement('div');
         newImgDiv.setAttribute('class', "col-2");
         let newContentsDiv = document.createElement('div');
-        newContentsDiv.setAttribute('class', "col-10 d-flex justify-content-between");
+        newContentsDiv.setAttribute('class', "col-10 d-flex align-items-center justify-content-between");
         cartContainer.appendChild(newImgDiv);
         cartContainer.appendChild(newContentsDiv);
         let newImg = document.createElement('img');
