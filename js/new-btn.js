@@ -7,9 +7,8 @@ const createdMiniCart = document.getElementById('cart-mini-element1');
 const resultQuantity = document.getElementById('resultQuantity');
 const resultCheck = document.getElementById('resultCheck');
 const createdMiniCart2 = document.getElementById('cart-mini-element2');
-const cartBtn = document.getElementById('cart-btn');
 const buyBtn = document.getElementById('go-to-buy');
-
+const price = document.getElementById('price').ariaLabel;
 
 //수량 플러스, 마이너스 버튼
 minusBtn.addEventListener('click', () => {
@@ -34,7 +33,6 @@ plusBtn.addEventListener('click', () => {
 // 담기 버튼
 miniCart.addEventListener('click', () => {
     let selectedItem = select.options[select.selectedIndex].text
-
     if (selectedItem == "선택하세요.") {
         alert("선택 먼저하세요")
     } else if (selectedItem == "쿨링에이전트5.5ml (3,900원)") {
@@ -46,7 +44,7 @@ miniCart.addEventListener('click', () => {
             resultCheck.innerText = (howMany1 * 3900).toLocaleString('ko-KR')+'원';
         }else {
             resultQuantity.innerText = `${document.getElementById("finalItem2").innerText} (쿨링 ${howMany1}개)`;
-            resultCheck.innerText = ((howMany1 * 3900) + (document.getElementById("finalItem2").innerText.slice(0, -2) * 15000)).toLocaleString('ko-KR')+'원';
+            resultCheck.innerText = ((howMany1 * 3900) + (document.getElementById("finalItem2").innerText.slice(0, -2) * price)).toLocaleString('ko-KR')+'원';
         }
     }
     else {
@@ -55,10 +53,10 @@ miniCart.addEventListener('click', () => {
         <small class="fw-bold" id="finalItem2">${howMany2}개 <i class="bi bi-x-lg" onclick="deleteItem1()" style="cursor: pointer;"></i></small>`;
         if (document.getElementById('finalItem1') == null) {
             resultQuantity.innerText = `${howMany2}개`;
-            resultCheck.innerText = (howMany2 * 15000).toLocaleString('ko-KR')+'원';
+            resultCheck.innerText = (howMany2 * price).toLocaleString('ko-KR')+'원';
         } else {
             resultQuantity.innerText = `${howMany2}개 (쿨링 ${document.getElementById("finalItem1").innerText.slice(0, -1)})`;
-            resultCheck.innerText = ((document.getElementById("finalItem1").innerText.slice(0, -2) * 3900) + (howMany2 * 15000)).toLocaleString('ko-KR')+'원';
+            resultCheck.innerText = ((document.getElementById("finalItem1").innerText.slice(0, -2) * 3900) + (howMany2 * price)).toLocaleString('ko-KR')+'원';
         }
     }
     quantity.value = 1
@@ -82,7 +80,7 @@ function deleteItem2(){
         resultCheck.innerText = "0원";
     }else {
         resultQuantity.innerText = `${document.getElementById("finalItem2").innerText}`;
-        resultCheck.innerText = (document.getElementById("finalItem2").innerText.slice(0, -2) * 15000).toLocaleString('ko-KR')+'원';
+        resultCheck.innerText = (document.getElementById("finalItem2").innerText.slice(0, -2) * price).toLocaleString('ko-KR')+'원';
     }
 }
 
@@ -107,17 +105,11 @@ function addCart() {
                 let coolings = '-'
                 const Liquid = new Product(title, imgsrc, liquid_quantity, coolings, total, backToLiquid);
                 alert('장바구니에 담았습니다.');
-                newSpan.setAttribute('id', 'addedItem')
-                newSpan.innerHTML = `(${cartquantity})`;
-                cartBtn.appendChild(newSpan);
                 sessionStorage.setItem(cartNum, JSON.stringify(Liquid));
             } else {
                 let coolings = document.getElementById("finalItem1").innerText;
                 const Liquid = new Product(title, imgsrc, liquid_quantity, coolings, total, backToLiquid);
                 alert('장바구니에 담았습니다.');
-                newSpan.setAttribute('id', 'addedItem')
-                newSpan.innerHTML = `(${cartquantity})`;
-                cartBtn.appendChild(newSpan);
                 sessionStorage.setItem(cartNum, JSON.stringify(Liquid));
             }
         } else {
@@ -133,11 +125,15 @@ function addCart() {
                 const Liquid = new Product(title, imgsrc, liquid_quantity, coolings, total, backToLiquid);
                 alert('장바구니에 담았습니다.');
                 sessionStorage.setItem(cartNum, JSON.stringify(Liquid));
+                let addedItems = document.getElementById('addedItem');
+                addedItems.innerText = `(${sessionStorage.length})`
             } else {
                 let coolings = document.getElementById("finalItem1").innerText;
                 const Liquid = new Product(title, imgsrc, liquid_quantity, coolings, total, backToLiquid);
                 alert('장바구니에 담았습니다.');
                 sessionStorage.setItem(cartNum, JSON.stringify(Liquid));
+                let addedItems = document.getElementById('addedItem');
+                addedItems.innerText = `(${sessionStorage.length})`
             }
         }
     }     
