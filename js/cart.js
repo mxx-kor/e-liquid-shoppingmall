@@ -45,13 +45,17 @@ function paintCart() {
         newImgDiv.appendChild(newImg);
         newAnchor.innerHTML = product1.title;
         newAnchor.setAttribute('href', product1.backToLiquid);
-        newAnchor.setAttribute('class', "text-decoration-none col-5 text-black");
+        newAnchor.setAttribute('class', "text-decoration-none overflow-hidden col-sm-4 text-black");
+        newAnchor.setAttribute('style', "text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; word-wrap: break-word; height: 4.8em;")
         newContentsDiv.appendChild(newAnchor);
         newSmall1.innerHTML = product1.liquid_quantity;
+        newSmall1.setAttribute = ('class', "col-sm-2 col-2 text-end")
         newContentsDiv.appendChild(newSmall1);
         newSmall2.innerHTML = product1.coolings;
+        newSmall2.setAttribute('class', "col-sm-2 col-2 text-center")
         newContentsDiv.appendChild(newSmall2);
         newSmall3.innerHTML = product1.total;
+        newSmall3.setAttribute = ('class', "col-sm-2 col-2 text center")
         newContentsDiv.appendChild(newSmall3);
         addXBtn(newContentsDiv, key);
     }
