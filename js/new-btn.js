@@ -93,7 +93,6 @@ function addCart() {
         alert('추가상품만 주문은 불가합니다.');
     } else {
         let newSpan = document.createElement('span');
-        let cartquantity = 1;
         let cartNum = 1;
         if (sessionStorage.getItem(1) == null) {
             let title = document.getElementById('liquid-title').innerText;
@@ -106,11 +105,13 @@ function addCart() {
                 const Liquid = new Product(title, imgsrc, liquid_quantity, coolings, total, backToLiquid);
                 alert('장바구니에 담았습니다.');
                 sessionStorage.setItem(cartNum, JSON.stringify(Liquid));
+                window.location.reload()
             } else {
                 let coolings = document.getElementById("finalItem1").innerText;
                 const Liquid = new Product(title, imgsrc, liquid_quantity, coolings, total, backToLiquid);
                 alert('장바구니에 담았습니다.');
                 sessionStorage.setItem(cartNum, JSON.stringify(Liquid));
+                window.location.reload()
             }
         } else {
             let cartNum = sessionStorage.length
