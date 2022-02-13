@@ -162,41 +162,39 @@
         <div class="col-md-5 col-lg-4 order-md-last">
           <h4 class="d-flex justify-content-between align-items-center mb-3">
             <span class="text-primary">주문 내역</span>
-            <span class="badge bg-primary rounded-pill">3</span>
+            <span class="badge bg-primary rounded-pill" id="quantity"></span>
           </h4>
           <ul class="list-group mb-3">
             <li class="list-group-item d-flex justify-content-between lh-sm">
               <div>
                 <h6 class="my-0">주문 상품</h6>
-                <small class="text-muted"
-                  >입호흡 DETOX Aloe Vera 디톡스 알로에베라 30ml 9.8mg</small
-                >
+                <small class="text-muted" id="item-title">-</small>
               </div>
-              <span class="text-muted">45,000\</span>
+              <span class="text-muted" id="item-total">-</span>
             </li>
             <li class="list-group-item d-flex justify-content-between lh-sm">
               <div>
                 <h6 class="my-0">추가 상품</h6>
-                <small class="text-muted">쿨링에이전트5.5ml</small>
+                <small class="text-muted" id="cooling-quantity">-</small>
               </div>
-              <span class="text-muted">3,900\</span>
+              <span class="text-muted" id="cooling-total">-</span>
             </li>
             <li class="list-group-item d-flex justify-content-between lh-sm">
               <div>
                 <h6 class="my-0">배송비</h6>
               </div>
-              <span class="text-muted">+ 2,500\</span>
+              <span class="text-muted">+ 2,500원</span>
             </li>
             <li class="list-group-item d-flex justify-content-between bg-light">
               <div class="text-success">
                 <h6 class="my-0">Promo code</h6>
                 <small>1,000원 할인 코드</small>
               </div>
-              <span class="text-success">− 1,000\</span>
+              <span class="text-success">− 1,000원</span>
             </li>
             <li class="list-group-item d-flex justify-content-between">
               <span>총액</span>
-              <strong>50,400\</strong>
+              <strong id="total">-</strong>
             </li>
           </ul>
 
@@ -576,5 +574,6 @@
       crossorigin="anonymous"
     ></script>
     <script src="./js/cart-quantity.js"></script>
+    <script src="./js/buy.js"></script>
   </body>
 </html>

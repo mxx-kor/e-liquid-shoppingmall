@@ -147,7 +147,23 @@ buyBtn.addEventListener('click', () => {
     } else if (document.getElementById('finalItem2') == null && document.getElementById('finalItem1') != null) {
         alert('추가상품만 주문은 불가합니다.');
     } else {
-        location.href = '../../../buy.html'
+        let buyItem = "buyItem"
+        let title = document.getElementById('liquid-title').innerText;
+        let imgsrc = document.getElementById('liquid-thumbnail').src;
+        let total = document.getElementById('resultCheck').innerText;
+        let liquid_quantity = document.getElementById("finalItem2").innerText.slice(0, -1);
+        let backToLiquid = document.location.href
+        if (document.getElementById('finalItem1') == null) { 
+            let coolings = '-'
+            const buyLiquid = new Product(title, imgsrc, liquid_quantity, coolings, total, backToLiquid);
+            sessionStorage.setItem(buyItem, JSON.stringify(buyLiquid));
+            location.href = '../../../buy.html'
+        } else {
+            let coolings = document.getElementById("finalItem1").innerText;
+            const buyLiquid = new Product(title, imgsrc, liquid_quantity, coolings, total, backToLiquid);
+            sessionStorage.setItem(buyItem, JSON.stringify(buyLiquid));
+            location.href = '../../../buy.html'
+        }
     }
 })
 
