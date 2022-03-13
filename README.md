@@ -12,7 +12,7 @@
 
 - HTML
 - CSS(Bootstrap)
-- JavaScript
+- Vanilla JavaScript
 
 ### demo: https://mxx-kor.github.io/e-liquid-shoppingmall/
 
